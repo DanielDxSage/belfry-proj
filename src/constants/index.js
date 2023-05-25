@@ -1,13 +1,14 @@
-import { assetmanagement, stocks } from "../assets";
+import assetmanagement from '../assets/assetmanagement.png'
+import stocks from '../assets/stocks.png'
 
 export const service = [
   {
-    id: "feedback-1",
+    id: "service-1",
     title: "Asset Management",
     img: assetmanagement,
   },
   {
-    id: "feedback-2",
+    id: "service-2",
     title: "Securities Trading",
     img: stocks,
   }

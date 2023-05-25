@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from '../components/Slider/Slider'
 import Nav from '../components/Nav'
 import TabContent from '../components/TabContent';
-import OurService from '../components/OurService';
+import Ourservice from '../components/Ourservice';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -18,7 +18,7 @@ const Home = () => {
         {/* <Tabs/> */}
         <TabContent/>
       </div>
-      <OurService />
+      <Ourservice />
 
     </div>
   )
