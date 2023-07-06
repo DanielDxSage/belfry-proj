@@ -1,19 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
-  ],
+  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  mode: "jit",
   theme: {
     extend: {},
     screens: {
-      xs: "480px",
-      ss: "620px",
-      sm: "768px",
-      md: "1060px",
-      lg: "1200px",
-      xl: "1700px",
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px'
     },
   },
   plugins: [],
-}
+};
