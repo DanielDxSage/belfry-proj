@@ -486,7 +486,9 @@ const RegisterFormDe = () => {
                           className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                         >
                           <span>Upload a file</span>
-                          <input type="file" id="signature" name="signature" accept="image/jpeg, image/png" onChange={handleFileChange}  className="sr-only" />
+                          <input type="file" id="signature" name="signature" accept="image/jpeg, image/png"
+                          
+                          onChange={handleFileChange}  className="sr-only" />
                         </label>
                         <p className="pl-1">or drag and drop</p>
                       </div>
