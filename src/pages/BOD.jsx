@@ -76,11 +76,13 @@ const BOD = () => {
   return (
     <div>
       <Nav />
-      <div className="h-[25rem] p-[11rem] md:p-[9rem] bg-[url('https://img.freepik.com/free-photo/business-people-board-room-meeting_53876-138090.jpg?w=900&t=st=1686646948~exp=1686647548~hmac=8fd9e7a6e8843b4c72d0f7428a60170ca61c21115cd9b5ee31251043e9816a8e')] bg-no-repeat bg-cover bg-center" >
-        <h1 className="text-3xl bg-gradient-to-r from-blue-500 to-gray-500 w-[18rem] p-[.7rem] mx-auto  text-white font-semibold text-center rounded-[.5rem]">Board of Directors</h1>
+      <div className="relative w-full" >
+        <img src="https://img.freepik.com/free-photo/business-people-board-room-meeting_53876-138090.jpg?w=900&t=st=1686646948~exp=1686647548~hmac=8fd9e7a6e8843b4c72d0f7428a60170ca61c21115cd9b5ee31251043e9816a8e" alt="Belfry BOD page" 
+        className="object-cover object-center w-full max-h-[calc(100vh-64px)] md:h-[25rem] lg:h-[25rem] xl:h-[30rem] mx-auto" />
+        <h1 className="lg:text-[2.5rem] text-[1.1rem] lg:font-bold font-semibold text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Board of Directors</h1>
       </div>
 
-      <div className="bg-gray-100 py-10">
+      <div className="bg-gray-100 py-7">
         <div className="container mx-auto">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 m-[2rem]">

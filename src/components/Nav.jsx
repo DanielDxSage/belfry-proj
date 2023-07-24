@@ -22,7 +22,7 @@ const solutions = [
   },
   {
     name: 'Board Of Directors',
-    href: '#',
+    href: '/leadership',
     icon: CursorArrowRaysIcon,
   },
   { name: 'Management Team', href: '#', icon: ShieldCheckIcon },
@@ -179,7 +179,7 @@ export default function Example() {
           </Popover.Group>
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
             <Link
-              to="/contact-us"
+              to="/Open-Account"
               className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
             >
               Open Account
@@ -244,15 +244,15 @@ export default function Example() {
                 ))}
               </div>
               <div>
-                <a href="#" className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
+                <Link to="/contact-us" className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
                   Contact Us
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/Open-Account"
                   className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                 >
                   Open Account
-                </a>
+                </Link>
                 {/* <p className="mt-6 text-center text-base font-medium text-gray-500">
                   Existing customer?{' '}
                   <a href="#" className="text-indigo-600 hover:text-indigo-500">

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import ContactUs from "./pages/ContactUs";
+import OpenAcct from "./pages/OpenAcct";
+import ContactUs from './pages/ContactUs';
 import BOD from "./pages/BOD"
 import {
   createBrowserRouter,
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "Open-Account",
+    element: <OpenAcct />,
   },
   {
     path: "contact-us",

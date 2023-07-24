@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { PhotoIcon } from '@heroicons/react/24/solid'
+import { CloudArrowUpIcon } from "@heroicons/react/24/outline";
+import Axios from 'axios';
 
 const RegisterFormDe = () => {
   const [step, setStep] = useState(1);
@@ -52,12 +53,26 @@ const RegisterFormDe = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFileChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.files[0]
-    });
-  };
+  const uploadImage = () => {
+    const formDataToSend = new FormData();
+    formDataToSend.append("passportPhoto", formData.passportPhoto);
+    // formDataToSend.append("validId", formData.validId);
+    // formDataToSend.append("signature", formData.signature);
+    formDataToSend.append("upload_preset", "b7fftjib");
+
+    Axios.post("https://api.cloudinary.com/v1_1/dqhekurvf/image/upload", 
+      formDataToSend
+    ).then((response) => (
+      console.log(response)
+    ))
+  }
+
+  // const handleFileChange = (event) => {
+  //   setFormData({
+  //     ...formData,
+  //     [event.target.name]: event.target.files[0] 
+  //   });
+  // };
 
   const handleNextStep = () => {
     setStep(step + 1);
@@ -70,53 +85,53 @@ const RegisterFormDe = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formDataToSend = new FormData();
-    formDataToSend.append("title", formData.title);
-    formDataToSend.append("surname", formData.surname);
-    formDataToSend.append("firstName", formData.firstName);
-    formDataToSend.append("dateOfBirth", formData.dateOfBirth);
-    formDataToSend.append("maritalStatus", formData.maritalStatus);
-    formDataToSend.append("employmentStatus", formData.employmentStatus);
-    formDataToSend.append("gender", formData.gender);
-    formDataToSend.append("mothersMaidenName", formData.mothersMaidenName);
-    formDataToSend.append("phoneNumber", formData.phoneNumber);
-    formDataToSend.append("emailAddress", formData.emailAddress);
-    formDataToSend.append("nationality", formData.nationality);
-    formDataToSend.append("stateOfOrigin", formData.stateOfOrigin);
-    formDataToSend.append("countryOfResidence", formData.countryOfResidence);
-    formDataToSend.append("stateOfResidence", formData.stateOfResidence);
-    formDataToSend.append("cityOfResidence", formData.cityOfResidence);
-    formDataToSend.append("addressOfResidence", formData.addressOfResidence);
-    formDataToSend.append("kinSurname", formData.kinSurname);
-    formDataToSend.append("kinFirstName", formData.kinFirstName);
-    formDataToSend.append("kinOtherName", formData.kinOtherName);
-    formDataToSend.append("kinDateOfBirth", formData.kinDateOfBirth);
-    formDataToSend.append("kinGender", formData.kinGender);
-    formDataToSend.append("kinRelationship", formData.kinRelationship);
-    formDataToSend.append("kinNationality", formData.kinNationality);
-    formDataToSend.append("kinCity", formData.kinCity);
-    formDataToSend.append("kinPhoneNumber", formData.kinPhoneNumber);
-    formDataToSend.append("kinEmailAddress", formData.kinEmailAddress);
-    formDataToSend.append("kinAddress", formData.kinAddress);
-    formDataToSend.append("bankName", formData.bankName);
-    formDataToSend.append("accountName", formData.accountName);
-    formDataToSend.append("accountNumber", formData.accountNumber);
-    formDataToSend.append("bvn", formData.bvn);
-    formDataToSend.append("passportPhoto", formData.passportPhoto);
-    formDataToSend.append("validId", formData.validId);
-    formDataToSend.append("signature", formData.signature);
+    // const formDataToSend = new FormData();
+    // formDataToSend.append("title", formData.title);
+    // formDataToSend.append("surname", formData.surname);
+    // formDataToSend.append("firstName", formData.firstName);
+    // formDataToSend.append("dateOfBirth", formData.dateOfBirth);
+    // formDataToSend.append("maritalStatus", formData.maritalStatus);
+    // formDataToSend.append("employmentStatus", formData.employmentStatus);
+    // formDataToSend.append("gender", formData.gender);
+    // formDataToSend.append("mothersMaidenName", formData.mothersMaidenName);
+    // formDataToSend.append("phoneNumber", formData.phoneNumber);
+    // formDataToSend.append("emailAddress", formData.emailAddress);
+    // formDataToSend.append("nationality", formData.nationality);
+    // formDataToSend.append("stateOfOrigin", formData.stateOfOrigin);
+    // formDataToSend.append("countryOfResidence", formData.countryOfResidence);
+    // formDataToSend.append("stateOfResidence", formData.stateOfResidence);
+    // formDataToSend.append("cityOfResidence", formData.cityOfResidence);
+    // formDataToSend.append("addressOfResidence", formData.addressOfResidence);
+    // formDataToSend.append("kinSurname", formData.kinSurname);
+    // formDataToSend.append("kinFirstName", formData.kinFirstName);
+    // formDataToSend.append("kinOtherName", formData.kinOtherName);
+    // formDataToSend.append("kinDateOfBirth", formData.kinDateOfBirth);
+    // formDataToSend.append("kinGender", formData.kinGender);
+    // formDataToSend.append("kinRelationship", formData.kinRelationship);
+    // formDataToSend.append("kinNationality", formData.kinNationality);
+    // formDataToSend.append("kinCity", formData.kinCity);
+    // formDataToSend.append("kinPhoneNumber", formData.kinPhoneNumber);
+    // formDataToSend.append("kinEmailAddress", formData.kinEmailAddress);
+    // formDataToSend.append("kinAddress", formData.kinAddress);
+    // formDataToSend.append("bankName", formData.bankName);
+    // formDataToSend.append("accountName", formData.accountName);
+    // formDataToSend.append("accountNumber", formData.accountNumber);
+    // formDataToSend.append("bvn", formData.bvn);
+    // formDataToSend.append("passportPhoto", formData.passportPhoto);
+    // formDataToSend.append("validId", formData.validId);
+    // formDataToSend.append("signature", formData.signature);
 
     // Display loading state
     setFormStatus({ ...formStatus, isLoading: true });
 
     try {
       // Perform form submission logic here
-      const response = await fetch('https://formspree.io/f/mwkdegbv', {
+      const response = await fetch('https://formspree.io/f/xjvqkkap', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: formDataToSend,
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
@@ -436,19 +451,10 @@ const RegisterFormDe = () => {
                     Passport Photo
                   </label>
                   <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-6">
-                    <div className="text-center">
-                      <PhotoIcon className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" />
-                      <div className="mt-4 flex text-sm leading-6 text-gray-600">
-                        <label
-                          htmlFor="passportPhoto"
-                          className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
-                        >
-                          <span>Upload a file</span>
-                          <input type="file" id="passportPhoto" name="passportPhoto" accept="image/jpeg, image/png" onChange={handleFileChange}  className="sr-only" />
-                        </label>
-                        <p className="pl-1">or drag and drop</p>
-                      </div>
-                      <p className="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                    <div className="p-4 flex flex-col items-center gap-2 bg-violet-50 text-violet-500 rounded-lg hover:bg-violet-100 cursor-pointer xl:w-[25rem] w-[14rem] overflow-hidden">
+                      <CloudArrowUpIcon className="w-6 h-6" />
+                      <span>Choose some files to upload</span>
+                      <input type="file" id="passportPhoto" name="passportPhoto" className="xl:ml-[7.5rem] ml-[7.1rem]" onChange={(event) => {uploadImage(event.target.files)}}/>
                     </div>
                   </div>
                 </div>
@@ -457,19 +463,10 @@ const RegisterFormDe = () => {
                     Your Valid ID 
                   </label>
                   <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-6">
-                    <div className="text-center">
-                      <PhotoIcon className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" />
-                      <div className="mt-4 flex text-sm leading-6 text-gray-600">
-                        <label
-                          htmlFor="validId"
-                          className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
-                        >
-                          <span>Upload a file</span>
-                          <input type="file" id="validId" name="validId" accept="image/jpeg, image/png" onChange={handleFileChange}  className="sr-only" />
-                        </label>
-                        <p className="pl-1">or drag and drop</p>
-                      </div>
-                      <p className="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                    <div className="p-4 flex flex-col items-center gap-2 bg-violet-50 text-violet-500 rounded-lg hover:bg-violet-100 cursor-pointer xl:w-[25rem] w-[14rem] overflow-hidden">
+                      <CloudArrowUpIcon className="w-6 h-6" />
+                      <span>Choose some files to upload</span>
+                      <input type="file" id="validId" name="validId" className="xl:ml-[7.5rem] ml-[7.1rem]" onChange={(event) => {uploadImage(event.target.files)}}/>
                     </div>
                   </div>
                 </div>
@@ -478,27 +475,16 @@ const RegisterFormDe = () => {
                     Your signature
                   </label>
                   <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-6">
-                    <div className="text-center">
-                      <PhotoIcon className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" />
-                      <div className="mt-4 flex text-sm leading-6 text-gray-600">
-                        <label
-                          htmlFor="signature"
-                          className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
-                        >
-                          <span>Upload a file</span>
-                          <input type="file" id="signature" name="signature" accept="image/jpeg, image/png"
-                          
-                          onChange={handleFileChange}  className="sr-only" />
-                        </label>
-                        <p className="pl-1">or drag and drop</p>
-                      </div>
-                      <p className="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                    <div className="p-4 flex flex-col items-center gap-2 bg-violet-50 text-violet-500 rounded-lg hover:bg-violet-100 cursor-pointer xl:w-[25rem] w-[14rem] overflow-hidden">
+                      <CloudArrowUpIcon className="w-6 h-6" />
+                      <span>Choose some files to upload</span>
+                      <input type="file" id="signature" name="signature" className="xl:ml-[7.5rem] ml-[7.1rem]" onChange={(event) => {uploadImage(event.target.files)}}/>
                     </div>
                   </div>
                 </div>
-
               </div>
-            </div>  
+            </div>
+              
           )}
  
           {step === 2 && (

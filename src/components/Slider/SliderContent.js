@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function SliderContent({ activeIndex, sliderImage }) {
   return (
@@ -13,7 +13,10 @@ function SliderContent({ activeIndex, sliderImage }) {
           <div className="textCon">
             <h2 className="slide-title">{slide.title}</h2>
             <h3 className="slide-text">{slide.description}</h3>
-            <a class="btn btn-primary" href="https://www.freecodecamp.org/">Get Started</a>
+            <Link to="/Open-Account">
+              <button class="btn btn-primary">Get Started</button>
+            </Link>
+            
           </div>
           
           

@@ -32,7 +32,7 @@ const Footer = () => {
 
       <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 mb-[1rem] border-t-[1px] border-t-[#3f3e45]">
         <p className="font-normal text-[18px] leading-[27px] text-black">
-          2023 Belfry. All Right Reserved.
+        &#169;2023 Belfry. All Right Reserved.
         </p>
         <div className="flex flex-row md:mt-0 mt-6">
           {socialMedia.map((social, index) => (
