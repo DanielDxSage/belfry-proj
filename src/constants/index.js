@@ -3,7 +3,6 @@ import instagram from "../assets/instagram.svg";
 import twitter from "../assets/twitter.svg";
 import linkedin from "../assets/linkedin.svg";
 
-
 export const footerLinks = [
   {
     title: "About Us",
@@ -84,3 +83,41 @@ export const socialMedia = [
     link: "https://www.linkedin.com/",
   },
 ];
+
+export const formState = {
+  title: "",
+  surname: "",
+  firstname: "",
+  othername: "",
+  dateOfBirth: "",
+  maritalStatus: "",
+  employmentStatus: "",
+  gender: "",
+  mothersMaidenName: "",
+  phoneNumber: "",
+  emailAddress: "",
+  nationality: "",
+  stateOfOrigin: "",
+  countryOfResidence: "",
+  stateOfResidence: "",
+  cityOfResidence: "",
+  addressOfResidence: "",
+  kinSurname: "",
+  kinFirstname: "",
+  kinOthername: "",
+  kinDateOfBirth: "",
+  kinGender: "",
+  kinRelationship: "",
+  kinNationality: "",
+  kinCity: "",
+  kinPhoneNumber: "",
+  kinEmailAddress: "",
+  kinAddress: "",
+  bankName: "",
+  accountName: "",
+  accountNumber: "",
+  bvn: "",
+  passportPhoto: "",
+  validId: "",
+  signature: "",
+};
