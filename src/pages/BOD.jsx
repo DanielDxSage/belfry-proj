@@ -79,7 +79,7 @@ const BOD = () => {
       <div className="relative w-full" >
         <img src="https://img.freepik.com/free-photo/business-people-board-room-meeting_53876-138090.jpg?w=900&t=st=1686646948~exp=1686647548~hmac=8fd9e7a6e8843b4c72d0f7428a60170ca61c21115cd9b5ee31251043e9816a8e" alt="Belfry BOD page" 
         className="object-cover object-center w-full max-h-[calc(100vh-64px)] md:h-[25rem] lg:h-[25rem] xl:h-[30rem] mx-auto" />
-        <h1 className="lg:text-[2.5rem] text-[1.1rem] lg:font-bold font-semibold text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Board of Directors</h1>
+        <h1 className="lg:text-[2.5rem] text-[1.5rem] lg:font-bold font-semibold text-blue-600 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Board of Directors</h1>
       </div>
 
       <div className="bg-gray-100 py-7">

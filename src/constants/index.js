@@ -10,15 +10,11 @@ export const footerLinks = [
     links: [
       {
         name: "The Company",
-        link: "https://www.hoobank.com/content/",
+        link: "/about-us",
       },
       {
         name: "Board Of Directors",
         link: "/leadership",
-      },
-      {
-        name: "Management Team",
-        link: "https://www.hoobank.com/create/",
       },
     ],
   },
@@ -27,36 +23,28 @@ export const footerLinks = [
     links: [
       {
         name: "Security Trading",
-        link: "https://www.hoobank.com/help-center/",
+        link: "/security-trading",
       },
       {
         name: "Investment Banking",
-        link: "https://www.hoobank.com/partners/",
+        link: "/investment-banking",
       },
       {
         name: "Asset Management",
-        link: "https://www.hoobank.com/suggestions/",
+        link: "/asset-management",
       },
       {
-        name: "Trustees",
-        link: "https://www.hoobank.com/blog/",
+        name: "Trusteeship",
+        link: "/trusteeship",
       },
     ],
   },
   {
-    title: "Investor relations",
+    title: "Resources",
     links: [
       {
-        name: "Annual Reports",
-        link: "https://www.hoobank.com/our-partner/",
-      },
-      {
-        name: "E-Mandate Registration",
-        link: "https://www.hoobank.com/become-a-partner/",
-      },
-      {
-        name: "Investor FAQs",
-        link: "https://www.hoobank.com/become-a-partner/",
+        name: "Downloads",
+        link: "/downloads",
       },
     ],
   },
@@ -66,21 +54,61 @@ export const socialMedia = [
   {
     id: "social-media-1",
     icon: instagram,
-    link: "https://www.instagram.com/",
+    link: "https://www.instagram.com/belfryinvestmentsecuritiesltd/",
   },
   {
     id: "social-media-2",
     icon: facebook,
-    link: "https://www.facebook.com/",
+    link: "https://www.facebook.com/Belfryinvestmentandsecuritiesltd/",
   },
   {
     id: "social-media-3",
     icon: twitter,
-    link: "https://www.twitter.com/",
+    link: "https://twitter.com/BISL_Brokers/",
   },
   {
     id: "social-media-4",
     icon: linkedin,
-    link: "https://www.linkedin.com/",
+    link: "https://www.linkedin.com/company/belfryinvestment/",
   },
 ];
+
+export const formState = {
+  title: '',
+  surname: '',
+  firstname: '',
+  othername: '',
+  dateOfBirth: '',
+  maritalStatus: '',
+  employmentStatus: '',
+  gender: '',
+  mothersMaidenName: '',
+  phoneNumber: '',
+  emailAddress: '',
+  nationality: '',
+  stateOfOrigin: '',
+  countryOfResidence: '',
+  stateOfResidence: '',
+  cityOfResidence: '',
+  addressOfResidence: '',
+  kinSurname: '',
+  kinFirstname: '',
+  kinOthername: '',
+  kinDateOfBirth: '',
+  kinGender: '',
+  kinRelationship: '',
+  kinNationality: '',
+  kinCity: '',
+  kinPhoneNumber: '',
+  kinEmailAddress: '',
+  kinAddress: '',
+  bankName: '',
+  accountName: '',
+  accountNumber: '',
+  bvn: '',
+  bankAddress: '',
+  sortCode: '',
+  passportPhoto: '',
+  validId: '',
+  signature: '',
+}

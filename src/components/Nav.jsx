@@ -4,12 +4,6 @@ import { Popover, Transition } from '@headlessui/react'
 import { Link } from "react-router-dom";
 import {
   Bars3Icon,
-  BookmarkSquareIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorArrowRaysIcon,
-  LifebuoyIcon,
-  ShieldCheckIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
@@ -17,33 +11,28 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 const solutions = [
   {
     name: 'The Company',
-    href: '#',
-    icon: ChartBarIcon,
+    href: '/about-us',
   },
   {
     name: 'Board Of Directors',
     href: '/leadership',
-    icon: CursorArrowRaysIcon,
   },
-  { name: 'Management Team', href: '#', icon: ShieldCheckIcon },
+  // { name: 'Management Team', href: '#', icon: ShieldCheckIcon },
 ]
 const resources = [
   {
     name: 'Security Trading',
-    href: '#',
-    icon: LifebuoyIcon,
+    href: '/security-trading',
   },
   {
     name: 'Investment Banking',
-    href: '#',
-    icon: BookmarkSquareIcon,
+    href: '/investment-banking',
   },
   {
     name: 'Asset Management',
-    href: '#',
-    icon: CalendarIcon,
+    href: '/asset-management',
   },
-  { name: 'Trusteeship', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
+  { name: 'Trusteeship', description: 'Understand how we take your privacy seriously.', href: '/trusteeship',},
 ]
 
 function classNames(...classes) {
@@ -109,7 +98,7 @@ export default function Example() {
                               href={item.href}
                               className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
                             >
-                              <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
+                              {/* <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" /> */}
                               <div className="ml-4">
                                 <p className="text-base font-medium text-gray-900">{item.name}</p>
                               </div>
@@ -160,7 +149,7 @@ export default function Example() {
                               href={item.href}
                               className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
                             >
-                              <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
+                              {/* <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" /> */}
                               <div className="ml-4">
                                 <p className="text-base font-medium text-gray-900">{item.name}</p>
                               </div>
@@ -219,7 +208,7 @@ export default function Example() {
                 <nav className="grid gap-y-8">
                   {solutions.map((item) => (
                     <Link to={item.href} className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50">
-                      <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
+                      {/* <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" /> */}
                       <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
                     </Link>
                     

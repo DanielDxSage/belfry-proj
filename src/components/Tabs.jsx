@@ -22,7 +22,7 @@ const Tabs = ({ tabs }) => {
         ))}
       </div>
       <div className="bg-gray-100 p-4 rounded-b-lg flex flex-col md:flex-row">
-        <img className='w-[300px] h-[300px] bg-cover rounded-[10px] lg:mr-[1.3rem] mb-[1rem]' src="https://img.freepik.com/free-photo/stock-market-results-stock-trade-forex-shares-concept_53876-127803.jpg?w=826&t=st=1683538561~exp=1683539161~hmac=035dbaad456f57b989b605e2f5d6a6b9bc0c679e3218ff280d3732ecb358f5cf" alt="Belfry" />
+        <img  className='w-[300px] h-[300px] bg-cover rounded-[10px] lg:mr-[1.3rem] mb-[1rem]' src={tabs[activeIndex].image} alt="Belfry" />
         <div className="space-y-[0.7rem] ">
           <h1 className='uppercase font-medium text-gray-400 text-[1rem] mt-0 sm:mt-[1rem]'>{tabs[activeIndex].heading}</h1>
           <p >{tabs[activeIndex].content}</p> 

@@ -73,15 +73,16 @@
 @media only screen and (max-width: 640px) {
   .textCon{
     max-width: 55%;
-    margin-left: 5.5rem;
-    top: 8.5rem;
+    margin-left: 3.5rem;
+    top: 3.5rem;
   }
 }
 
 @media only screen and (max-width: 640px) {
   .slide-title {
+    width: 16rem;
     top: 19%;
-    font-size: 33px;
+    font-size: 35px;
     z-index: 0;
     margin-bottom: 1rem;
   }

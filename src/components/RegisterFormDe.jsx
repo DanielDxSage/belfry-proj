@@ -1,46 +1,11 @@
 import React, { useState } from 'react';
 import { CloudArrowUpIcon } from "@heroicons/react/24/outline";
-import Axios from 'axios';
+import axios from 'axios';
+import { formState } from "../constants";
 
 const RegisterFormDe = () => {
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({
-    title: '',
-    surname: '',
-    firstname: '',
-    othername: '',
-    dateOfBirth: '',
-    maritalStatus: '',
-    employmentStatus: '',
-    gender: '',
-    mothersMaidenName: '',
-    phoneNumber: '',
-    emailAddress: '',
-    nationality: '',
-    stateOfOrigin: '',
-    countryOfResidence: '',
-    stateOfResidence: '',
-    cityOfResidence: '',
-    addressOfResidence: '',
-    kinSurname: '',
-    kinFirstname: '',
-    kinOthername: '',
-    kinDateOfBirth: '',
-    kinGender: '',
-    kinRelationship: '',
-    kinNationality: '',
-    kinCity: '',
-    kinPhoneNumber: '',
-    kinEmailAddress: '',
-    kinAddress: '',
-    bankName: '',
-    accountName: '',
-    accountNumber: '',
-    bvn: '',
-    passportPhoto: null,
-    validId: null,
-    signature: null,
-  });
+  const [formData, setFormData] = useState(formState);
 
   const [formStatus, setFormStatus] = useState({
     message: '',
@@ -53,26 +18,44 @@ const RegisterFormDe = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const uploadImage = () => {
-    const formDataToSend = new FormData();
-    formDataToSend.append("passportPhoto", formData.passportPhoto);
-    // formDataToSend.append("validId", formData.validId);
-    // formDataToSend.append("signature", formData.signature);
-    formDataToSend.append("upload_preset", "b7fftjib");
+  const uploadPassportPhoto = async (e) => {
+    const imageData = new FormData();
+    imageData.append("file", e.target.files[0]);
+    imageData.append("upload_preset", "b7fftjib");
 
-    Axios.post("https://api.cloudinary.com/v1_1/dqhekurvf/image/upload", 
-      formDataToSend
-    ).then((response) => (
-      console.log(response)
-    ))
-  }
+    const image = await axios.post(
+      "https://api.cloudinary.com/v1_1/dqhekurvf/image/upload",
+      imageData
+    );
 
-  // const handleFileChange = (event) => {
-  //   setFormData({
-  //     ...formData,
-  //     [event.target.name]: event.target.files[0] 
-  //   });
-  // };
+    setFormData({ ...formData, passportPhoto: image.data.secure_url });
+  };
+
+  const uploadValidId = async (e) => {
+    const imageData = new FormData();
+    imageData.append("file", e.target.files[0]);
+    imageData.append("upload_preset", "b7fftjib");
+
+    const image = await axios.post(
+      "https://api.cloudinary.com/v1_1/dqhekurvf/image/upload",
+      imageData
+    );
+
+    setFormData({ ...formData, validId: image.data.secure_url });
+  };
+
+  const uploadSignature = async (e) => {
+    const imageData = new FormData();
+    imageData.append("file", e.target.files[0]);
+    imageData.append("upload_preset", "b7fftjib");
+
+    const image = await axios.post(
+      "https://api.cloudinary.com/v1_1/dqhekurvf/image/upload",
+      imageData
+    );
+
+    setFormData({ ...formData, signature: image.data.secure_url });
+  };
 
   const handleNextStep = () => {
     setStep(step + 1);
@@ -85,48 +68,12 @@ const RegisterFormDe = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // const formDataToSend = new FormData();
-    // formDataToSend.append("title", formData.title);
-    // formDataToSend.append("surname", formData.surname);
-    // formDataToSend.append("firstName", formData.firstName);
-    // formDataToSend.append("dateOfBirth", formData.dateOfBirth);
-    // formDataToSend.append("maritalStatus", formData.maritalStatus);
-    // formDataToSend.append("employmentStatus", formData.employmentStatus);
-    // formDataToSend.append("gender", formData.gender);
-    // formDataToSend.append("mothersMaidenName", formData.mothersMaidenName);
-    // formDataToSend.append("phoneNumber", formData.phoneNumber);
-    // formDataToSend.append("emailAddress", formData.emailAddress);
-    // formDataToSend.append("nationality", formData.nationality);
-    // formDataToSend.append("stateOfOrigin", formData.stateOfOrigin);
-    // formDataToSend.append("countryOfResidence", formData.countryOfResidence);
-    // formDataToSend.append("stateOfResidence", formData.stateOfResidence);
-    // formDataToSend.append("cityOfResidence", formData.cityOfResidence);
-    // formDataToSend.append("addressOfResidence", formData.addressOfResidence);
-    // formDataToSend.append("kinSurname", formData.kinSurname);
-    // formDataToSend.append("kinFirstName", formData.kinFirstName);
-    // formDataToSend.append("kinOtherName", formData.kinOtherName);
-    // formDataToSend.append("kinDateOfBirth", formData.kinDateOfBirth);
-    // formDataToSend.append("kinGender", formData.kinGender);
-    // formDataToSend.append("kinRelationship", formData.kinRelationship);
-    // formDataToSend.append("kinNationality", formData.kinNationality);
-    // formDataToSend.append("kinCity", formData.kinCity);
-    // formDataToSend.append("kinPhoneNumber", formData.kinPhoneNumber);
-    // formDataToSend.append("kinEmailAddress", formData.kinEmailAddress);
-    // formDataToSend.append("kinAddress", formData.kinAddress);
-    // formDataToSend.append("bankName", formData.bankName);
-    // formDataToSend.append("accountName", formData.accountName);
-    // formDataToSend.append("accountNumber", formData.accountNumber);
-    // formDataToSend.append("bvn", formData.bvn);
-    // formDataToSend.append("passportPhoto", formData.passportPhoto);
-    // formDataToSend.append("validId", formData.validId);
-    // formDataToSend.append("signature", formData.signature);
-
     // Display loading state
     setFormStatus({ ...formStatus, isLoading: true });
 
     try {
       // Perform form submission logic here
-      const response = await fetch('https://formspree.io/f/xjvqkkap', {
+      const response = await fetch('https://getform.io/f/328855b4-7149-41bf-81f4-338db43880ce', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -144,43 +91,7 @@ const RegisterFormDe = () => {
         });
 
         // Reset form data after successful submission
-        setFormData({
-          title: '',
-          surname: '',
-          firstname: '',
-          othername: '',
-          dateOfBirth: '',
-          maritalStatus: '',
-          employmentStatus: '',
-          gender: '',
-          mothersMaidenName: '',
-          phoneNumber: '',
-          emailAddress: '',
-          nationality: '',
-          stateOfOrigin: '',
-          countryOfResidence: '',
-          stateOfResidence: '',
-          cityOfResidence: '',
-          addressOfResidence: '',
-          kinSurname: '',
-          kinFirstname: '',
-          kinOthername: '',
-          kinDateOfBirth: '',
-          kinGender: '',
-          kinRelationship: '',
-          kinNationality: '',
-          kinCity: '',
-          kinPhoneNumber: '',
-          kinEmailAddress: '',
-          kinAddress: '',
-          bankName: '',
-          accountName: '',
-          accountNumber: '',
-          bvn: '',
-          passportPhoto: null,
-          validId: null,
-          signature: null
-        });
+        setFormData(formState);
         setStep(1);
       } else {
         // Form submission failed
@@ -223,6 +134,7 @@ const RegisterFormDe = () => {
                     <option value="">Select Title</option>
                     <option value="Mr">Mr</option>
                     <option value="Mrs">Mrs</option>
+                    <option value="Master">Master</option>
                     <option value="Miss">Miss</option>
                   </select>
                 </div>
@@ -237,6 +149,7 @@ const RegisterFormDe = () => {
                     className="appearance-none border border-gray-300 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-500"
                     value={formData.surname}
                     onChange={handleChange}
+                    required
                   />
                 </div>
                 <div className="col-span-2">
@@ -262,6 +175,7 @@ const RegisterFormDe = () => {
                     value={formData.otherName}
                     onChange={handleChange}
                     className="w-full border-gray-300 border p-2"
+                    required
                   />
                 </div>
                 <div className="col-span-2">
@@ -291,8 +205,6 @@ const RegisterFormDe = () => {
                     <option value="">Select Marital Status</option>
                     <option value="single">Single</option>
                     <option value="married">Married</option>
-                    <option value="divorced">Divorced</option>
-                    <option value="widowed">Widowed</option>
                   </select>
                 </div>
                 <div className="col-span-2">
@@ -454,7 +366,7 @@ const RegisterFormDe = () => {
                     <div className="p-4 flex flex-col items-center gap-2 bg-violet-50 text-violet-500 rounded-lg hover:bg-violet-100 cursor-pointer xl:w-[25rem] w-[14rem] overflow-hidden">
                       <CloudArrowUpIcon className="w-6 h-6" />
                       <span>Choose some files to upload</span>
-                      <input type="file" id="passportPhoto" name="passportPhoto" className="xl:ml-[7.5rem] ml-[7.1rem]" onChange={(event) => {uploadImage(event.target.files)}}/>
+                      <input type="file" id="passportPhoto" name="passportPhoto" className="xl:ml-[7.5rem] ml-[7.1rem]" onChange={uploadPassportPhoto}/>
                     </div>
                   </div>
                 </div>
@@ -466,7 +378,7 @@ const RegisterFormDe = () => {
                     <div className="p-4 flex flex-col items-center gap-2 bg-violet-50 text-violet-500 rounded-lg hover:bg-violet-100 cursor-pointer xl:w-[25rem] w-[14rem] overflow-hidden">
                       <CloudArrowUpIcon className="w-6 h-6" />
                       <span>Choose some files to upload</span>
-                      <input type="file" id="validId" name="validId" className="xl:ml-[7.5rem] ml-[7.1rem]" onChange={(event) => {uploadImage(event.target.files)}}/>
+                      <input type="file" id="validId" name="validId" className="xl:ml-[7.5rem] ml-[7.1rem]" onChange={uploadValidId}/>
                     </div>
                   </div>
                 </div>
@@ -478,7 +390,7 @@ const RegisterFormDe = () => {
                     <div className="p-4 flex flex-col items-center gap-2 bg-violet-50 text-violet-500 rounded-lg hover:bg-violet-100 cursor-pointer xl:w-[25rem] w-[14rem] overflow-hidden">
                       <CloudArrowUpIcon className="w-6 h-6" />
                       <span>Choose some files to upload</span>
-                      <input type="file" id="signature" name="signature" className="xl:ml-[7.5rem] ml-[7.1rem]" onChange={(event) => {uploadImage(event.target.files)}}/>
+                      <input type="file" id="signature" name="signature" className="xl:ml-[7.5rem] ml-[7.1rem]" onChange={uploadSignature}/>
                     </div>
                   </div>
                 </div>
@@ -644,7 +556,7 @@ const RegisterFormDe = () => {
 
           {step === 3 && (
             <div className="col-span-2">
-              <h3 className="text-lg font-semibold mb-4 col-span-2">Step 3: Bank Details</h3>
+              <h3 className="text-lg font-semibold text-blue-500 mb-4 col-span-2">Step 3: Bank Details</h3>
               <div className="grid grid-cols-2  gap-4">
                 <div className="col-span-2">
                   <label htmlFor="bankName" className="block text-gray-700 mb-2">
@@ -662,6 +574,15 @@ const RegisterFormDe = () => {
                     <option value="access">Access Bank</option>
                     <option value="uba">UBA</option>
                     <option value="gtbank">GTBank</option>
+                    <option value="zenith">Zenith Bank</option>
+                    <option value="FidelityBank">Fidelity Bank Plc</option>
+                    <option value="FCMB">FCMB</option>
+                    <option value="EcobankNigeria">Ecobank Nigeria</option>
+                    <option value="PolarisBankLimited">Polaris Bank Limited</option>
+                    <option value="SterlingBankPlc">Sterling Bank Plc</option>
+                    <option value="WemaBankPlc">Wema Bank Plc</option>
+                    <option value="StanbicIBTCBankPlc">Stanbic IBTC Bank Plc</option>
+                    <option value="FirstBankofNigeria">First Bank of Nigeria</option>
                   </select>
                 </div>
                 <div className="col-span-2">
@@ -698,6 +619,32 @@ const RegisterFormDe = () => {
                     type="text"
                     name="bvn"
                     value={formData.bvn}
+                    onChange={handleChange}
+                    className="w-full border-gray-300 border p-2"
+                    required
+                  />
+                </div>
+                <div className="col-span-2">
+                  <label htmlFor="bankAddress" className="block mb-1">
+                    Bank Address
+                  </label>
+                  <input
+                    type="text"
+                    name="bankAddress"
+                    value={formData.bankAddress}
+                    onChange={handleChange}
+                    className="w-full border-gray-300 border p-2"
+                    required
+                  />
+                </div>
+                <div className="col-span-2">
+                  <label htmlFor="sortCode" className="block mb-1">
+                  Sort Code
+                  </label>
+                  <input
+                    type="text"
+                    name="sortCode"
+                    value={formData.sortCode}
                     onChange={handleChange}
                     className="w-full border-gray-300 border p-2"
                     required
