@@ -3,7 +3,6 @@ import instagram from "../assets/instagram.svg";
 import twitter from "../assets/twitter.svg";
 import linkedin from "../assets/linkedin.svg";
 
-
 export const footerLinks = [
   {
     title: "About Us",
@@ -111,4 +110,5 @@ export const formState = {
   passportPhoto: '',
   validId: '',
   signature: '',
+  LGA: '',
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import OurserviceCard from './OurserviceCard';
+import OurserviceCard from './OurServiceCard';
 import assetmanagement from '../assets/assetmanagement.png'
 import stocks from '../assets/stocks.png'
 import trust from '../assets/trust.png'

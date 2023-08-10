@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from '../components/Slider/Slider'
 import Nav from '../components/Nav'
 import TabContent from '../components/TabContent';
-import Ourservice from '../components/Ourservice';
+import Ourservice from '../components/OurService';
 import CTA from '../components/CTA';
 import GetInTouch from '../components/GetInTouch';
 import Footer from '../components/Footer'
