@@ -1,4 +1,4 @@
-export default [
+ export default [
   {
     title: "Embark on a Journey to Financial Success",
     description: "Unleash the Power of Your Capital with Expert Investment Guidance",

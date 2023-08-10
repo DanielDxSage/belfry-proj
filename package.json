@@ -1,6 +1,7 @@
 {
-  "name": "belfry-proj",
+  "name": "belfry",
   "version": "0.1.0",
+  "homepage": "https://www.belfryinvestmentlimited.com",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.7",

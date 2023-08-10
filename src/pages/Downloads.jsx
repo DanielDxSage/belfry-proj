@@ -69,17 +69,7 @@ const Downloads = () => {
       })
     })
   }
-  const onButtonClick7 = () => {
-    fetch('kyc_update.pdf').then(response => {
-      response.blob().then(blob => {
-          const fileURL = window.URL.createObjectURL(blob);
-          let kyc = document.createElement('a');
-          kyc.href = fileURL;
-          kyc.download = 'kyc_update.pdf';
-          kyc.click();
-      })
-    })
-  }
+  
   const onButtonClick8 = () => {
     fetch('purchase_mandate.pdf').then(response => {
       response.blob().then(blob => {
@@ -173,15 +163,7 @@ const Downloads = () => {
                 Download Pdf
               </button>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-6 h-[10.5rem]">
-              <h3 className="text-xl font-semibold mb-1 text-gray-500">KYC Update</h3>
-              <p className="text-gray-600 mb-4">
-                KYC Update form 
-              </p>
-              <button className="bg-blue-500 hover:bg-blue-700 text-white px-6 py-2 rounded" onClick={onButtonClick7}>
-                Download Pdf
-              </button>
-            </div>
+            
             <div className="bg-white rounded-lg shadow-md p-6 h-[10.5rem]">
               <h3 className="text-xl font-semibold mb-1 text-gray-500">E-Mandate</h3>
               <p className="text-gray-600 mb-4">

@@ -22,13 +22,13 @@ const BOD = () => {
     {
       name: 'Chief (Mrs) Celina Nnenna Chionuma',
       position: 'Chairman',
-      additionalInfo: 'Chief (Mrs) Celina N. Chionuma holds a Bachelor’s Degree of Science (B.Sc.) in Guidance and Counselling from University of Nigeria, Nsukka in 1991. Prior to assuming office as a Director of Belfry Investments and Securities Limited, she was a businesswoman of international',
+      additionalInfo: 'Chief (Mrs.) Celina N. Chionuma holds a Bachelor’s Degree of Science (B.Sc.) in Guidance and Counselling from University of Nigeria, Nsukka in 1991. Prior to assuming office as a Director of Belfry Investments and Securities Limited, she was a businesswoman of international repute and currently is the Managing Director of Helen Pat Fashion House, a colossus in the fashion industry. She is indeed a cosmopolite, a patroness to so many respected social institutions and organizations. ',
       image: CelinaNnenna,
     },
     {
       name: 'Rev. Kingsley Chinedu Chionuma',
       position: 'Executive Director',
-      additionalInfo: 'Rev. Kingsley Chinedu Chionuma holds a Bachelor of Science (B.Sc.) Degree in Geology and Mining from Nnamdi Azikiwe University, Akwa and a Post-Graduate Diploma (PGD) in Computer Sciences and a Master in Business Administration (MBA) Degree in Information Technology Management from the... ',
+      additionalInfo: 'Rev. Kingsley Chinedu Chionuma holds a Bachelor of Science (B.Sc.) Degree in Geology and Mining from Nnamdi Azikiwe University, Akwa and a Post-Graduate Diploma (PGD) in Computer Sciences and a Master in Business Administration (MBA) Degree in Information Technology Management from the Abubakar Tafawa Balewa University, Bauchi. He is an Associate Member of the Nigerian Institute of Management (NIM) and a Student member of the Chartered of Stock Brokers of Nigeria. He has attended several professional training programs in Banking and Finance within and outside Nigeria and is happily married with kids.',
       image: KingsleyChinedu,
     },
     {

@@ -191,11 +191,14 @@ export default function Example() {
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <img
-                    className="h-[70px] w-auto"
-                    src={logo}
-                    alt="Belfry Investment And Securities Limited"
-                  />
+                  <Link to="/">
+                    <img
+                      className="h-[70px] w-auto"
+                      src={logo}
+                      alt="Belfry Investment And Securities Limited"
+                    />
+                  </Link>
+                  
                 </div>
                 <div className="-mr-2">
                   <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -223,13 +226,12 @@ export default function Example() {
                 </h1>
                 
                 {resources.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className="text-base font-medium text-gray-900 hover:text-gray-700"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div>
